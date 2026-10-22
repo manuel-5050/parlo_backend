@@ -1,0 +1,8 @@
+services:
+  mcp:
+    extends:
+      file: docker-compose.yml
+      service: web
+    command: python manage.py run_mcp_server --host 0.0.0.0 --port 8002
+    ports: !override
+      - "8002:8002"
